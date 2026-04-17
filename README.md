@@ -114,3 +114,26 @@ User Question → Similarity Search → GPT-3.5 → Answer
 
 ## 📄 License
 MIT
+
+
+## Level 5 — Prior Authorization AI Agent
+
+An autonomous AI agent that processes prior authorization requests end to end.
+
+### What the agent does
+1. Receives a prior auth request with clinical details
+2. Searches policy documents for relevant coverage rules (RAG)
+3. Predicts denial risk using trained ML model (Random Forest)
+4. Makes a determination — approve, deny, or escalate
+5. Drafts a formal determination letter
+6. Flags high-risk cases for human review
+
+### Tech stack
+- LangGraph — agent orchestration and state management
+- LangChain + FAISS — policy document retrieval
+- scikit-learn — denial risk prediction
+- OpenAI GPT-3.5 — letter drafting and reasoning
+- Streamlit — clinical decision support UI
+
+### How to run
+streamlit run prior_auth_app.py
